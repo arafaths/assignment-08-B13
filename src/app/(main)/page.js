@@ -1,9 +1,10 @@
+import Hero from "@/components/home/hero";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-red-500">
-      Home page
+    <div>
+      <Hero/>
     </div>
   );
 }

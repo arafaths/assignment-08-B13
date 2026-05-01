@@ -45,10 +45,10 @@ const Navbar = ({ user, handleLogout }) => {
           </>
         ) : (
           <>
-            <Link href="/login" className="btn btn-sm btn-outline">
+            <Link href="/signin" className="btn btn-sm btn-outline">
               Login
             </Link>
-            <Link href="/register" className="btn btn-sm btn-primary">
+            <Link href="/signup" className="btn btn-sm btn-primary">
               Register
             </Link>
           </>

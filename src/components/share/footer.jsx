@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -41,16 +42,16 @@ const Footer = () => {
           <h3 className="font-semibold mb-3">Follow Us</h3>
           <div className="flex gap-4 text-xl">
             <a href="#" className="hover:text-orange-500">
-              🌐
+              <FaFacebook />
             </a>
             <a href="#" className="hover:text-orange-500">
-              📘
+              <FaInstagram />
             </a>
             <a href="#" className="hover:text-orange-500">
-              📸
+              <FaTwitter />
             </a>
             <a href="#" className="hover:text-orange-500">
-              🐦
+              <FaGithub />
             </a>
           </div>
         </div>
