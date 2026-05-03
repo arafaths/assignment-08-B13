@@ -10,6 +10,7 @@ import {
   TextField,
 } from '@heroui/react';
 import { authClient } from '@/lib/auth-client';
+import { FcGoogle } from 'react-icons/fc';
 
 const RegisterPage = () => {
   const handleRegister = async e => {
@@ -30,6 +31,12 @@ const RegisterPage = () => {
     if (error) {
       alert(`${error.message}`);
     }
+  };
+
+  const signIn = async () => {
+    await authClient.signIn.social({
+      provider: 'google',
+    });
   };
 
   return (
@@ -90,7 +97,7 @@ const RegisterPage = () => {
               type="submit"
               className="btn btn-primary w-full rounded-full"
             >
-             Login
+              Login
             </button>
           </div>
         </Form>
@@ -99,7 +106,9 @@ const RegisterPage = () => {
         <div className="divider">OR</div>
 
         {/* Google Login */}
-        <button className="btn btn-outline w-full">Continue with Google</button>
+        <button onClick={signIn} className="btn btn-outline w-full">
+          <FcGoogle size={20}/> Continue with Google
+        </button>
 
         {/* Login Link */}
         <p className="text-center mt-4 text-sm">

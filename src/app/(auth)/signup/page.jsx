@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
+import { FcGoogle } from 'react-icons/fc';
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -33,6 +34,12 @@ const RegisterPage = () => {
     if (error) {
       alert(`SignUp filed ${error.message}`);
     }
+  };
+
+  const signIn = async () => {
+    await authClient.signIn.social({
+      provider: 'google',
+    });
   };
 
   return (
@@ -116,7 +123,9 @@ const RegisterPage = () => {
         <div className="divider">OR</div>
 
         {/* Google Login */}
-        <button className="btn btn-outline w-full">Continue with Google</button>
+        <button onClick={signIn} className="btn btn-outline w-full">
+        <FcGoogle size={20}/>  Continue with Google
+        </button>
 
         {/* Login Link */}
         <p className="text-center mt-4 text-sm">
