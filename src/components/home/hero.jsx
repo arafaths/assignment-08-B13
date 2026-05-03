@@ -2,7 +2,7 @@ import Link from 'next/link';
 import SummerBanner from '../../asset/summerbanner.png'
 import Image from 'next/image';
 
-const Hero = () => {
+const Hero = () => { 
   return (
     <div className="hero min-h-[80vh] bg-base-200">
       <div className="hero-content flex-col-reverse lg:flex-row-reverse gap-10">
