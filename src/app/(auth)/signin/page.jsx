@@ -1,11 +1,116 @@
-import React from 'react';
+'use client';
+import Link from 'next/link';
+import {
+  Button,
+  Description,
+  FieldError,
+  Form,
+  Input,
+  Label,
+  TextField,
+} from '@heroui/react';
+import { authClient } from '@/lib/auth-client';
 
-const SigninPage = () => {
+const RegisterPage = () => {
+  const handleRegister = async e => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    const { data, error } = await authClient.signIn.email({
+      email,
+      password,
+      callbackURL: '/',
+    });
+    if (data) {
+      alert('SignIn Successful');
+    }
+    if (error) {
+      alert(`${error.message}`);
+    }
+  };
+
   return (
-    <div>
-      SignIn page
+    <div className="min-h-screen flex items-center justify-center bg-base-200 px-4">
+      <div className="card w-full max-w-md bg-base-100 shadow-xl p-6">
+        {/* Title */}
+        <h2 className="text-2xl font-heading font-bold text-center mb-4">
+          Login Account
+        </h2>
+
+        {/* Form */}
+        <Form onSubmit={handleRegister} className="space-y-2.5">
+          {/* Email */}
+          <TextField
+            isRequired
+            name="email"
+            type="email"
+            validate={value => {
+              if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                return 'Please enter a valid email address';
+              }
+              return null;
+            }}
+          >
+            <Label>Email</Label>
+            <Input placeholder="john@example.com" />
+            <FieldError />
+          </TextField>
+
+          {/* Password */}
+          <TextField
+            isRequired
+            minLength={8}
+            name="password"
+            type="password"
+            validate={value => {
+              if (value.length < 8) {
+                return 'Password must be at least 8 characters';
+              }
+              if (!/[A-Z]/.test(value)) {
+                return 'Password must contain at least one uppercase letter';
+              }
+              if (!/[0-9]/.test(value)) {
+                return 'Password must contain at least one number';
+              }
+              return null;
+            }}
+          >
+            <Label>Password</Label>
+            <Input placeholder="Enter your password" />
+            <Description>
+              Must be at least 8 characters with 1 uppercase and 1 number
+            </Description>
+            <FieldError />
+          </TextField>
+          <div className="">
+            <button
+              type="submit"
+              className="btn btn-primary w-full rounded-full"
+            >
+             Login
+            </button>
+          </div>
+        </Form>
+
+        {/* Divider */}
+        <div className="divider">OR</div>
+
+        {/* Google Login */}
+        <button className="btn btn-outline w-full">Continue with Google</button>
+
+        {/* Login Link */}
+        <p className="text-center mt-4 text-sm">
+          Create a Account?{' '}
+          <Link href="/signup" className="text-primary">
+            Create
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
 
-export default SigninPage;
+export default RegisterPage;
