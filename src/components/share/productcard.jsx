@@ -2,19 +2,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function ProductCard({ Product }) {
+  
+
   const { id, name, price, rating, image } = Product;
 
   return (
     <div className="card bg-base-100 shadow-md hover:shadow-xl transition duration-300 rounded-2xl">
       {/* Image */}
       <figure className="p-4">
-        <Image
-          src={image}
-          alt={name}
-          width={100}
-          height={100}
-          className="rounded-xl h-48 w-full object-cover"
-        />
+        <div className="relative w-full h-48">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="rounded-xl object-cover hover:scale-105 transition duration-300"
+          />
+        </div>
       </figure>
 
       {/* Content */}

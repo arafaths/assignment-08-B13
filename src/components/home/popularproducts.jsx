@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
+import ProductsData from '../share/data';
 import ProductCard from '../share/productcard';
 
 const PopularProducts = async() => {
-  const res = await fetch('https://suncart-two.vercel.app/products.json');
-  const Products = await res.json();
+ 
+  const Products = await ProductsData();
   
   return (
     <div className="bg-base-200">

@@ -1,8 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar = ({ user, handleLogout }) => {
+  const path = usePathname()
+  
   return (
     <div className="navbar bg-base-100 shadow-md px-4 sticky top-0 z-50">
       {/* Left (Logo) */}
@@ -16,13 +19,28 @@ const Navbar = ({ user, handleLogout }) => {
       <div className="flex-none hidden md:flex">
         <ul className="menu menu-horizontal px-1 font-medium gap-4">
           <li>
-            <Link href="/">Home</Link>
+            <Link
+              href="/"
+              className={`${'/' === path ? 'text-blue-500 border-b-2 border-blue-500' : ''}`}
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="/products">Products</Link>
+            <Link
+              href="/products"
+              className={`${'/products' === path ? 'text-blue-500 border-b-2 border-blue-500' : ''}`}
+            >
+              Products
+            </Link>
           </li>
           <li>
-            <Link href="/profile">My Profile</Link>
+            <Link
+              href="/profile"
+              className={`${'/profile' === path ? 'text-blue-500 border-b-2 border-blue-500' : ''}`}
+            >
+              My Profile
+            </Link>
           </li>
         </ul>
       </div>
