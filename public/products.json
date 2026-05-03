@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://i.pinimg.com/736x/42/21/5c/42215c642414c02b72e2a3e1cde8a3f3.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Men's Summer T-Shirt",
+    "brand": "CoolWear",
+    "price": 20,
+    "rating": 4.5,
+    "stock": 15,
+    "description": "Lightweight and breathable t-shirt for hot summer days.",
+    "image": "https://i.pinimg.com/736x/ee/58/61/ee586138d0383c1e6d07b09ecb343b18.jpg",
+    "category": "Clothing"
+  },
+  {
+    "id": 3,
+    "name": "Women's Beach Dress",
+    "brand": "SunnyStyle",
+    "price": 35,
+    "rating": 4.8,
+    "stock": 8,
+    "description": "Elegant beach dress perfect for summer vacations.",
+    "image": "https://i.pinimg.com/1200x/0e/ef/65/0eef6589d83b7697f36a2bbdae260c88.jpg",
+    "category": "Clothing"
+  },
+  {
+    "id": 4,
+    "name": "SPF 50 Sunscreen",
+    "brand": "SkinCare+",
+    "price": 12,
+    "rating": 4.6,
+    "stock": 20,
+    "description": "Protect your skin from harmful UV rays with SPF 50 sunscreen.",
+    "image": "https://i.pinimg.com/webp/1200x/4f/3f/72/4f3f729a89993a552ca2558983935c29.webp",
+    "category": "Skincare"
+  },
+  {
+    "id": 5,
+    "name": "Straw Beach Hat",
+    "brand": "BeachVibe",
+    "price": 18,
+    "rating": 4.4,
+    "stock": 12,
+    "description": "Classic straw hat to keep you cool and stylish.",
+    "image": "https://i.pinimg.com/webp/1200x/81/1d/51/811d51103a7dd2dcce64fdde9167e0c6.webp",
+    "category": "Accessories"
+  },
+  {
+    "id": 6,
+    "name": "Flip Flops Sandals",
+    "brand": "StepEasy",
+    "price": 10,
+    "rating": 4.3,
+    "stock": 25,
+    "description": "Comfortable flip flops for beach and casual wear.",
+    "image": "https://i.pinimg.com/1200x/43/6d/01/436d017dcc93e5b025ea1ee4b1284dcf.jpg",
+    "category": "Footwear"
+  },
+  {
+    "id": 7,
+    "name": "Portable Mini Fan",
+    "brand": "CoolBreeze",
+    "price": 14,
+    "rating": 4.5,
+    "stock": 18,
+    "description": "Rechargeable mini fan to keep you cool anywhere.",
+    "image": "https://i.pinimg.com/1200x/7d/3c/73/7d3c73d2989f4ee348eb16eeb4c2b8da.jpg",
+    "category": "Electronics"
+  },
+  {
+    "id": 8,
+    "name": "Beach Tote Bag",
+    "brand": "CarryAll",
+    "price": 22,
+    "rating": 4.6,
+    "stock": 9,
+    "description": "Spacious tote bag for carrying all your beach essentials.",
+    "image": "https://i.pinimg.com/webp/1200x/19/8a/03/198a03da78a9667b3e40f099f2d52016.webp",
+    "category": "Accessories"
+  }
+]
