@@ -9,8 +9,8 @@ export default function ProductCard({ Product }) {
   return (
     <div className="card bg-base-100 shadow-md hover:shadow-xl transition duration-300 rounded-2xl">
       {/* Image */}
-      <figure className="p-4">
-        <div className="relative w-full h-48">
+      <figure className="sm:p-2 md:p-4">
+        <div className="relative w-full h-35 sm:40 md:h-48">
           <Image
             src={image}
             alt={name}
@@ -21,7 +21,7 @@ export default function ProductCard({ Product }) {
       </figure>
 
       {/* Content */}
-      <div className="card-body pt-0">
+      <div className="card-body p-0 sm:p-1 md:px-6 pt-0">
         {/* Product Name */}
         <h2 className="font-heading text-lg font-semibold">{name}</h2>
 
