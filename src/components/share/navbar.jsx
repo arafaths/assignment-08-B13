@@ -10,7 +10,7 @@ const Navbar = () => {
   const path = usePathname()
 
   const userData = authClient.useSession();
-  const user = userData.data?.user;
+  const user = userData .data?.user;
   
   const signOut = async() => {
     await authClient.signOut();
@@ -59,14 +59,16 @@ const Navbar = () => {
       <div className="flex-1 flex justify-end items-center gap-3">
         {user && (
           <>
-            <Avatar>
-              <Avatar.Image
-                alt="John Doe"
-                src={user?.image || avatarIcon.src}
-                referrerPolicy="no-referrer"
-              />
-              <Avatar.Fallback>{user?.name[0].toUpperCase()}</Avatar.Fallback>
-            </Avatar>
+            <Link href={'/profile'}>
+              <Avatar>
+                <Avatar.Image
+                  alt="John Doe"
+                  src={user?.image || avatarIcon.src}
+                  referrerPolicy="no-referrer"
+                />
+                <Avatar.Fallback>{user?.name[0].toUpperCase()}</Avatar.Fallback>
+              </Avatar>
+            </Link>
             <button
               onClick={signOut}
               className="btn btn-sm btn-outline btn-error"
