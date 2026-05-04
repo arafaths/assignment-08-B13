@@ -9,7 +9,7 @@ const ProductsPage = async() => {
     <div className="bg-base-200">
       <div className="max-w-7xl mx-auto px-5 pb-10 pt-5">
         <h2 className="text-xl font-semibold">All Products</h2>
-        <div className="grid grid-cols-3 gap-6 mt-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
           {Products.map(Product => (
             <ProductCard key={Product.id} Product={Product} />
           ))}

@@ -6,6 +6,7 @@ import { Button, Description, FieldError, Form, Input, Label, TextField } from '
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { FcGoogle } from 'react-icons/fc';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -42,6 +43,8 @@ const RegisterPage = () => {
     });
   };
 
+  const [show, setShow] = useState(false);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-base-200 px-4">
       <div className="card w-full max-w-md bg-base-100 shadow-xl p-6">
@@ -63,7 +66,6 @@ const RegisterPage = () => {
           <TextField name="photo" type="text">
             <Label>Image URL</Label>
             <Input placeholder="example.com/image" />
-       
           </TextField>
 
           {/* Email */}
@@ -85,10 +87,11 @@ const RegisterPage = () => {
 
           {/* Password */}
           <TextField
+            className="relative"
             isRequired
             minLength={8}
             name="password"
-            type="password"
+            type={show ? 'text' : 'password'}
             validate={value => {
               if (value.length < 8) {
                 return 'Password must be at least 8 characters';
@@ -104,6 +107,12 @@ const RegisterPage = () => {
           >
             <Label>Password</Label>
             <Input placeholder="Enter your password" />
+            <samp
+              onClick={() => setShow(!show)}
+              className="absolute top-8 right-5 cursor-pointer"
+            >
+              {show ? <FaEye /> : <FaEyeSlash />}
+            </samp>
             <Description>
               Must be at least 8 characters with 1 uppercase and 1 number
             </Description>
@@ -124,7 +133,7 @@ const RegisterPage = () => {
 
         {/* Google Login */}
         <button onClick={signIn} className="btn btn-outline w-full">
-        <FcGoogle size={20}/>  Continue with Google
+          <FcGoogle size={20} /> Continue with Google
         </button>
 
         {/* Login Link */}
