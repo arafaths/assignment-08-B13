@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Hero = () => { 
   return (
-    <div className="hero min-h-[80vh] bg-base-200">
+    <div className="hero sm:min-h-[80vh] bg-base-200">
       <div className="hero-content flex-col-reverse lg:flex-row-reverse gap-10">
         {/* Image */}
         <Image
