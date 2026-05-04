@@ -16,8 +16,14 @@ const Hero = () => {
         {/* Text Content */}
         <div>
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-            Summer Sale ☀️ <br />
-            <span className="text-orange-500">Up to 50% OFF</span>
+            <span className=" animate__animated animate__fadeInDown">
+              {' '}
+              Summer Sale ☀️
+            </span>{' '}
+            <br />
+            <span className="text-orange-500 animate__animated animate__fadeInUp">
+              Up to 50% OFF
+            </span>
           </h1>
 
           <p className="py-4 text-gray-500 max-w-md">
@@ -28,7 +34,7 @@ const Hero = () => {
           <div className="flex gap-4">
             <Link
               href="/products"
-              className="btn btn-sm sm:btn-md btn-primary bg-orange-500 border-none hover:bg-orange-600"
+              className="btn btn-sm sm:btn-md btn-primary bg-orange-500 border-none hover:bg-orange-600 animate__animated animate__zoomIn"
             >
               Shop Now
             </Link>
