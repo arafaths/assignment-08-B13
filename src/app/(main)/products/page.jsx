@@ -2,6 +2,11 @@ import ProductsData from '@/components/share/data';
 import ProductCard from '@/components/share/productcard';
 import React from 'react';
 
+export const metadata = {
+  title: 'SunCart | Products',
+};
+
+
 const ProductsPage = async() => {
 
   const Products = await ProductsData();

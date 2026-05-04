@@ -7,6 +7,7 @@ import avatarIcon from '../../../asset/user.png';
 import { Avatar } from '@heroui/react';
 import { UpdateProfile } from '@/components/profile/updateprofile';
 
+
 const ProfilePage = () => {
   const { data, isPending } = authClient.useSession();
 
