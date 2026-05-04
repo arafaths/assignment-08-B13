@@ -9,7 +9,7 @@ const Hero = () => {
         {/* Image */}
         <Image
           src={SummerBanner}
-          className="max-w-sm md:max-w-md rounded-lg shadow-2xl"
+          className="w-full max-w-sm md:max-w-md rounded-lg shadow-2xl"
           alt="summer"
         />
 

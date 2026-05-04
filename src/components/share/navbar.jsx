@@ -17,10 +17,10 @@ const Navbar = () => {
   }
   
   return (
-    <div className="navbar bg-base-100 shadow-md px-4 sticky top-0 z-50">
+    <div className="navbar bg-base-100 shadow-md py-0 sm:py-2 sm: sm:px-4 sticky top-0 z-50">
       {/* Left (Logo) */}
       <div className="flex-1">
-        <Link href="/" className="text-xl font-bold text-orange-500">
+        <Link href="/" className="text-lg sm:text-xl font-bold text-orange-500">
           ☀️ SunCart
         </Link>
       </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
         {user && (
           <>
             <Link href={'/profile'}>
-              <Avatar>
+              <Avatar className="w-8 h-8 sm:w-10 sm:h-10">
                 <Avatar.Image
                   alt="John Doe"
                   src={user?.image || avatarIcon.src}
@@ -71,7 +71,7 @@ const Navbar = () => {
             </Link>
             <button
               onClick={signOut}
-              className="btn btn-sm btn-outline btn-error"
+              className="btn btn-xs sm:btn-sm btn-outline btn-error"
             >
               Logout
             </button>
@@ -79,10 +79,10 @@ const Navbar = () => {
         )}
         {!user && (
           <>
-            <Link href="/signin" className="btn btn-sm btn-outline">
+            <Link href="/signin" className="btn btn-xs sm:btn-sm btn-outline">
               Login
             </Link>
-            <Link href="/signup" className="btn btn-sm btn-primary">
+            <Link href="/signup" className="btn btn-xs sm:btn-sm btn-primary">
               Register
             </Link>
           </>
