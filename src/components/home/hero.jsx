@@ -15,7 +15,7 @@ const Hero = () => {
 
         {/* Text Content */}
         <div>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
             Summer Sale ☀️ <br />
             <span className="text-orange-500">Up to 50% OFF</span>
           </h1>
@@ -28,12 +28,12 @@ const Hero = () => {
           <div className="flex gap-4">
             <Link
               href="/products"
-              className="btn btn-primary bg-orange-500 border-none hover:bg-orange-600"
+              className="btn btn-sm sm:btn-md btn-primary bg-orange-500 border-none hover:bg-orange-600"
             >
               Shop Now
             </Link>
 
-            <Link href="/products" className="btn btn-outline">
+            <Link href="/products" className="btn btn-sm sm:btn-md btn-outline">
               View Products
             </Link>
           </div>
