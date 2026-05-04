@@ -1,10 +1,20 @@
 'use client';
 
+import { authClient } from '@/lib/auth-client';
+import { Avatar } from '@heroui/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import avatarIcon from '../../asset/user.png'
 
-const Navbar = ({ user, handleLogout }) => {
+const Navbar = () => {
   const path = usePathname()
+
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  
+  const signOut = async() => {
+    await authClient.signOut();
+  }
   
   return (
     <div className="navbar bg-base-100 shadow-md px-4 sticky top-0 z-50">
@@ -47,21 +57,25 @@ const Navbar = ({ user, handleLogout }) => {
 
       {/* Right (Auth Section) */}
       <div className="flex-1 flex justify-end items-center gap-3">
-        {user ? (
+        {user && (
           <>
-            <img
-              src={user?.photoURL}
-              alt="user"
-              className="w-10 h-10 rounded-full border"
-            />
+            <Avatar>
+              <Avatar.Image
+                alt="John Doe"
+                src={user?.image || avatarIcon.src}
+                referrerPolicy="no-referrer"
+              />
+              <Avatar.Fallback>{user?.name[0].toUpperCase()}</Avatar.Fallback>
+            </Avatar>
             <button
-              onClick={handleLogout}
+              onClick={signOut}
               className="btn btn-sm btn-outline btn-error"
             >
               Logout
             </button>
           </>
-        ) : (
+        )}
+        {!user && (
           <>
             <Link href="/signin" className="btn btn-sm btn-outline">
               Login

@@ -16,13 +16,13 @@ const RegisterPage = () => {
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
-    const photo = form.photo.value;
+    const image = form.photo.value;
     const password = form.password.value;
 
     const { data, error } = await authClient.signUp.email({
       name,
       email,
-      photo,
+      image,
       password,
     });
     if (!error) {
@@ -60,10 +60,10 @@ const RegisterPage = () => {
           </TextField>
 
           {/* Image */}
-          <TextField isRequired name="photo" type="text">
+          <TextField name="photo" type="text">
             <Label>Image URL</Label>
             <Input placeholder="example.com/image" />
-            <FieldError />
+       
           </TextField>
 
           {/* Email */}
